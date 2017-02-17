@@ -66,6 +66,8 @@ std::map<std::string, int> getWordsFreq(const std::string& fileName)
         wordsFrequency[word]++;
     }
     
+    file.close();
+    
     return wordsFrequency;
 }
 
