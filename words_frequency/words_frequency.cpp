@@ -84,6 +84,7 @@ std::string deletePunctuation(const std::string& str)
 {
     std::string cstr(str);
     
+    /// вместо cstr[cstr.size() - 1] лучше написать cstr.back()
     while (!isalpha(cstr[cstr.size() - 1]))
     {
         cstr.pop_back();
@@ -123,6 +124,7 @@ int sortedOutput(const std::map<std::string, int>& map)
     freq.resize(mapSize);
     
     int i = 0;
+    // чтобы избежать лишнего копировая переменной лучше написать const auto& it : map
     for (auto it : map)
     {
         freq[i].str   = it.first;
