@@ -12,6 +12,8 @@ class Vector2
 {
 public:
     Vector2 (double _x = 0, double _y = 0);
+    
+    // здесь можно не писать деструктор, т.к. он всё равно будет создал автоматически
     ~Vector2();
     
     Vector2  operator + (const Vector2& other) const;
@@ -49,6 +51,7 @@ private:
     //================================DEBUG===================================
     
 private:
+// FIXIT: лучше оставить x и y в public ... иначе надо писать методы доступа к полям ...
     double x;
     double y;
 };
