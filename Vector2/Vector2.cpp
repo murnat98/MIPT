@@ -7,6 +7,16 @@ Vector2::Vector2 (double _x, double _y):
 
 Vector2::~Vector2() {}
 
+double Vector2::getX() const
+{
+    return x;
+}
+
+double Vector2::getY() const
+{
+    return y;
+}
+
 Vector2 Vector2::operator +(const Vector2& other) const
 {
     return Vector2(x + other.x, y + other.y);
@@ -78,6 +88,22 @@ Vector2 Vector2::norm() const
 Vector2 Vector2::perpendicular() const
 {
     return Vector2(y, -x);
+}
+
+Vector2 Vector2::rotate(double angle)
+{
+    double oldX = x;
+    double oldY = y;
+    
+    x = oldX * cos(angle) - oldY * sin(angle);
+    y = oldX * sin(angle) + oldY * cos(angle);
+    
+    return Vector2(x, y);
+}
+
+Vector2 Vector2::getRotated(double angle) const
+{
+    return Vector2(x, y).rotate(angle);
 }
 
 std::istream& operator >>(std::istream& stream, Vector2& vec)

@@ -84,7 +84,7 @@ std::string deletePunctuation(const std::string& str)
 {
     std::string cstr(str);
     
-    while (!isalpha(cstr[cstr.size() - 1]))
+    while (!isalpha(cstr.back()))
     {
         cstr.pop_back();
     }
