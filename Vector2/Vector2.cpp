@@ -5,8 +5,6 @@ Vector2::Vector2 (double _x, double _y):
     y(_y)
 {}
 
-Vector2::~Vector2() {}
-
 double Vector2::getX() const
 {
     return x;
