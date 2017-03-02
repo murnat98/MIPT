@@ -13,6 +13,15 @@ class Vector2
 public:
     Vector2 (double _x = 0, double _y = 0);
     
+    /*
+        Вы выбрали не лучший вариант из двух предложенных ранее. 
+        Вы сделали только getter'ы
+        А как поменять значение полей x,y?)
+        
+        Нужны ещё setter'ы.
+        
+        Лучше просто поместите x,y в public. Ей удобно будет пользоваться.
+    */
     double getX() const;
     double getY() const;
     
