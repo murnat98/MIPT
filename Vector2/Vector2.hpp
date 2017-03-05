@@ -13,9 +13,6 @@ class Vector2
 public:
     Vector2 (double _x = 0, double _y = 0);
     
-    double getX() const;
-    double getY() const;
-    
     Vector2  operator + (const Vector2& other) const;
     Vector2  operator - (const Vector2& other) const;
     Vector2& operator +=(const Vector2& other)      ;
@@ -52,7 +49,7 @@ private:
     
     //================================DEBUG===================================
     
-private:
+public:
     double x;
     double y;
 };
