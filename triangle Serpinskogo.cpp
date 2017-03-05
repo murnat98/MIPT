@@ -36,6 +36,10 @@ int drawTriangleSerp(sf::RenderWindow& window, int nLines, sf::Vector2f a, sf::V
 
 	drawTriangle(window, a, b, c);
 
+	/*
+	sf::Vector2f mid1 = (a + b) * 0.5f;
+	Так короче код.
+	*/
 	sf::Vector2f mid1((a.x + b.x) / 2, (a.y + b.y) / 2);
 	sf::Vector2f mid2((a.x + c.x) / 2, (a.y + c.y) / 2);
 	sf::Vector2f mid3((b.x + c.x) / 2, (b.y + c.y) / 2);
