@@ -1,19 +1,16 @@
 #include "Vector2.hpp"
 
+const double EPSILON = 0.0001;
+
+bool isZero(double number)
+{
+    return number < EPSILON ? true : false;
+}
+
 Vector2::Vector2 (double _x, double _y):
     x(_x),
     y(_y)
 {}
-
-double Vector2::getX() const
-{
-    return x;
-}
-
-double Vector2::getY() const
-{
-    return y;
-}
 
 Vector2 Vector2::operator +(const Vector2& other) const
 {
@@ -102,6 +99,22 @@ Vector2 Vector2::rotate(double angle)
 Vector2 Vector2::getRotated(double angle) const
 {
     return Vector2(x, y).rotate(angle);
+}
+
+double Vector2::getAngleBetween(const Vector2& other) const
+{
+    double angle = 0;
+    
+    double cosinus = ((*this) * other) / (len() * other.len());
+    angle = acos(cosinus);
+    angle *= 180. / M_PI;
+    
+    if (((*this) ^ other) < 0)
+    {
+        angle = 360. - angle;
+    }
+    
+    return angle;
 }
 
 std::istream& operator >>(std::istream& stream, Vector2& vec)

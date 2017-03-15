@@ -33,6 +33,8 @@ public:
     Vector2 rotate       (double angle);
     Vector2 getRotated   (double angle) const;
     
+    double getAngleBetween(const Vector2& other) const; // in degrees
+    
     friend std::istream& operator >>(std::istream& stream,       Vector2& vec);
     friend std::ostream& operator <<(std::ostream& stream, const Vector2& vec);
     
