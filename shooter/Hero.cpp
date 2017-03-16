@@ -18,6 +18,10 @@ Bullet::Bullet(const Vector2& vel, const Vector2& pos_)
 
 Bullet::~Bullet()
 {
+    /*
+    это можно не писать ... все равно объект будет удален и никто
+    об этих "предсмертных" присвоениях не узнает
+    */
     radius   = RAD_POSION;
     velocity = VEL_POSION;
     pos      = POS_POSION;
@@ -40,6 +44,10 @@ void Bullet::update(double dt)
 
 void Bullet::setVelocity(const Vector2& _velocity)
 {
+    /*
+    Можно, например, писать this->velocity = velocity;
+    если не хотите придумаывать странные названия
+    */
     velocity = _velocity;
 }
 
@@ -60,6 +68,10 @@ bool Bullet::checkBoards(const Vector2& size) const
     
     bool boardOk = true;
     
+    /*
+    вместо кучи строк можно написать
+    return bulletX >= 0 && bulletX <= sizeX && bulletY >= 0 && bulletY <= sizeY;
+    */
     if (bulletX < 0)
     {
         return false;
@@ -70,6 +82,9 @@ bool Bullet::checkBoards(const Vector2& size) const
         return false;
     }
     
+    /*
+    Точно не bulletX >= sizeX ? 
+    */
     if (bulletX > sizeX)
     {
         return false;
@@ -99,6 +114,9 @@ Hero::Hero(double _radius)
 
 Hero::~Hero()
 {
+    /*
+    лучше убрать весь деструктор, т.к. он не нужен
+    */
     pos       = POS_POISON;
     direction = DIR_POISON;
     velocity  = VEL_POISON;
