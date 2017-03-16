@@ -3,6 +3,9 @@
 
 Game::Game()
 {
+    /*
+    откуда вы такое взяли? зачем это?
+    */
     new(&map) Map();
     
     new(&texture) sf::Texture();
@@ -140,6 +143,10 @@ int Game::drawMap()
     Vector2 bulletPosition;
     sf::CircleShape bulletShape(BULLET_RADIUS);
     
+    /*
+    везде, где индекс не особо нужен, лучше использовать 
+    for (auto& bullet : map.bullets)
+    */
     for (int i = 0; i < map.bullets.size(); i++)
     {
         bulletShape.setFillColor(sf::Color::Red);
