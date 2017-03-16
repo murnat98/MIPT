@@ -11,6 +11,9 @@ static const double BULLET_VELOCITY = 7;
 
 static const int BULLET_RADIUS = 10;
 
+/*
+fixit: нужно измерить время между кадрами, а не харкодить явно его
+*/
 static const double DIFF_TIME = 0.2;
 
 #endif /* include_h */
