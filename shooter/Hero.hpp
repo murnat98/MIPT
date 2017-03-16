@@ -25,6 +25,9 @@ private:
     Vector2 velocity;
     double  radius;
     
+    /*
+    думаю const можно опустить, т.к. уже constexpr написали
+    */
     constexpr static const double INIT_RADIUS = 1.;
     constexpr static const double RAD_POSION  = 1.;
     constexpr static const double POS_POSION  = 1.;
